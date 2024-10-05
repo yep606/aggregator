@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: first
+          predicates:
+            - Path=/first/**
+          uri: lb://MYWEB
+#        - id: second
+#          predicates:
+#            - Path=/second/
+#          uri: localhost:8082
+#        - id : auth-server
+#          predicates:
+#            - Path=/login/
+#          uri: localhost:8088
+server:
+  port: 8080
+
